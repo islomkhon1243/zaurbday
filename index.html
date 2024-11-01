@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днём Рождения, Заур!</title>
+    <style>
+        body {
+            margin: 0;
+            background: #1a1a1a url('images/road.jpg') no-repeat center center fixed;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        .header {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+            color: #ff4d4d;
+        }
+        .content {
+            padding: 50px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 200px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+        .footer {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            color: #bfbfbf;
+            position: relative;
+            z-index: 2;
+        }
+        /* Анимация для машин */
+        .car-animation {
+            position: relative;
+            animation: drive 10s linear infinite;
+        }
+        @keyframes drive {
+            0% { left: -1700px; }
+            100% { left: 100vw; }
+        }
+        /* Анимация спидометра */
+        .speedometer {
+            position: relative;
+            margin: 0 auto;
+            width: 200px;
+            height: 100px;
+            background: #333;
+            border-radius: 100px 100px 0 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .needle {
+            width: 3px;
+            height: 80px;
+            background: red;
+            position: absolute;
+            bottom: 10px;
+            transform-origin: bottom center;
+            transform: rotate(0deg);
+            animation: rotateNeedle 3s ease-in-out forwards;
+        }
+        @keyframes rotateNeedle {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(46deg); } /* Угол, чтобы показать 23 км/ч */
+        }
+        .car-wheel {
+            width: 100px;
+            height: 100px;
+            background: url('images/wheel.png') no-repeat center center;
+            background-size: contain;
+            animation: rotateWheel 1s linear infinite;
+        }
+        @keyframes rotateWheel {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+		.zaur {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .zaur img, .zaur video {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+            animation: float 3s ease-in-out infinite alternate;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+        }
+        .zaur img:hover, .zaur video:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.4);
+        }
+        /* Анимация мигающих огней */
+        .flashing-lights {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .light {
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            border-radius: 50%;
+            animation: flash 0.5s alternate infinite;
+        }
+        .light:nth-child(2) {
+            background-color: yellow;
+            animation-delay: 0.25s;
+        }
+        .light:nth-child(3) {
+            background-color: green;
+            animation-delay: 0.5s;
+        }
+        @keyframes flash {
+            from { opacity: 0.2; }
+            to { opacity: 1; }
+        }
+		/* Анимация для падающих звёзд */
+        .star {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: red;
+            border-radius: 50%;
+            animation: fall linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>С Днём Рождения, Заур!</h1>
+    </div>
+
+    <div class="content">
+        <p>Желаем тебе бесконечных дорог и незабываемых поездок, Заур!</p>
+
+        <!-- Спидометр -->
+        <div class="speedometer">
+            <div class="needle"></div>
+            <p style="position: absolute; top: 10px; color: white; font-size: 2em;">23 км/ч</p>
+        </div>
+
+        <!-- Галерея автомобилей -->
+        <div class="gallery">
+            <img src="images/car1.jpg" alt="Автомобиль 1">
+            <img src="images/car2.jpg" alt="Автомобиль 2">
+            <img src="images/car3.jpg" alt="Автомобиль 3">
+        </div>
+        
+        <!-- Анимация движущейся машины -->
+        <div class="car-animation">
+            <img src="images/car_driving.png" alt="Машина едет">
+        </div>
+		
+		<h1 style="color: red">Мои звездные моменты</h1>
+		<div class="zaur">
+            <video src="videos/zaur1.mp4" alt="Видео 1" autoplay loop muted></video>
+			<img src="images/zaur1.jpg" alt="Фото 1">
+            <img src="images/zaur2.jpg" alt="Фото 2">
+            <img src="images/zaur3.jpg" alt="Фото 3">
+			<video src="videos/zaur2.mp4" alt="Видео 2" autoplay loop muted></video>
+        </div>
+
+        <!-- Кнопка для звуков двигателей -->
+        <button id="engineSoundBtn" style="padding: 10px 20px; font-size: 1.5em; margin-top: 20px; background-color: #ffcc00; border: none; border-radius: 5px; cursor: pointer;">Пусть звук двигателя ревёт!</button>
+
+        <!-- Мигающие огни -->
+        <div class="flashing-lights">
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Пусть твоя жизнь будет такой же яркой, как гоночный трек!</p>
+    </div>
+	
+	<script>
+		// Добавьте анимацию падающих звёзд
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(star);
+        }
+
+        // Звуки двигателей
+        const sounds = [
+            new Audio('sounds/engine1.mp3'),
+            new Audio('sounds/engine2.mp3'),
+            new Audio('sounds/engine3.mp3')
+        ];
+
+        document.getElementById('engineSoundBtn').addEventListener('click', () => {
+            const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
+            randomSound.play();
+        });
+	</script>
+</body>
+</html>
