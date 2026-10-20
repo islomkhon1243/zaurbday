@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import path from 'node:path';
+const html=fs.readFileSync('dist/index.html','utf8');
+const refs=[...html.matchAll(/(?:src|href)="([^"]+)"/g)].map(m=>m[1]).filter(x=>!x.startsWith('#')&&!x.startsWith('http')&&!x.startsWith('data:'));
+const missing=refs.filter(x=>!fs.existsSync(path.join('dist',x)));
+const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
+const duplicateIds=ids.filter((x,i)=>ids.indexOf(x)!==i);
+const anchors=[...html.matchAll(/href="#([^"]+)"/g)].map(m=>m[1]);
+const brokenAnchors=anchors.filter(x=>!ids.includes(x));
+console.log(JSON.stringify({localReferences:refs.length,missing,duplicateIds,brokenAnchors}));
+process.exitCode=missing.length||duplicateIds.length||brokenAnchors.length?1:0;

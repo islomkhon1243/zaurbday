@@ -1,0 +1,7 @@
+Three.js and its example loaders: MIT License. See THREE-LICENSE.txt.
+Draco decoder: Google Draco, Apache License 2.0. https://github.com/google/draco
+Ferrari 458 Italia model by vicent091036, distributed in the official Three.js examples.
+Original model: https://sketchfab.com/models/57bf6cc56931426e87494f554df1dab6
+Distribution: https://threejs.org/examples/models/gltf/ferrari.glb
+Changes: burgundy paint, alternate green/graphite paint, studio environment and lighting.
+Personal illustrations created with OpenAI image generation using user-provided photographs.
