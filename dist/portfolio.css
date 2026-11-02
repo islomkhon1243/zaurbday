@@ -21,3 +21,7 @@
 @media(max-width:650px){.portrait-wrap{left:-13%;width:126%;height:84%;bottom:5%}.hero-greeting{font-size:8px}.hero-coordinate{font-size:6px}.hero-profession{font-size:6px}.explore-link{font-size:7px;max-width:180px}.audio-toggle{font-size:7px}.menu-toggle{font-size:8px}.game-top{font-size:6px}.game-bottom small{font-size:6px}.journal-photo>span{font-size:6px}}
 
 @media(max-width:650px){.drive-controls .line-button{font-size:6px;min-height:40px}.paint{width:23px;height:23px}.drive-controls{gap:12px}.menu-toggle{height:36px}.menu-toggle i{top:14px}.menu-toggle i:last-child{top:20px}}
+
+.hero-music{margin-top:10px;padding:9px 12px;border:1px solid var(--line);background:transparent;color:var(--paper);font:8px var(--mono);letter-spacing:.08em;cursor:pointer}.hero-music:hover{border-color:var(--gold);color:var(--gold)}
+
+.loader-center{display:flex;flex-direction:column;align-items:center;gap:18px}.welcome-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}.welcome-actions button{padding:13px 16px;background:transparent;border:1px solid var(--line);color:var(--paper);font:8px var(--mono);letter-spacing:.08em;cursor:pointer}.welcome-actions button:hover{border-color:var(--gold);color:var(--gold)}@media(max-width:650px){.welcome-actions{flex-direction:column;width:min(280px,80vw)}.welcome-actions button{padding:13px}}
